@@ -1,23 +1,8 @@
-import Curso from './Curso.js';
+import CursoGrabado from './CursoGrabado.js';
+import BootcampVivo from './BootcampVivo.js';
 import TiraMaterias from './TiraMaterias.js';
 
-const tira = new TiraMaterias('Ana', 20);
-const curso = new Curso('JS-101', 'JavaScript', 1000);
+console.log('Módulos cargados correctamente. Listo para integración y pruebas de bordes.');
 
-const primeraInscripcion = tira.inscribirCurso(curso);
-const segundaInscripcion = tira.inscribirCurso(curso);
-const total = tira.calcularTotalMensual();
-
-console.log('Primera inscripción:', primeraInscripcion); // true
-console.log('Segunda inscripción:', segundaInscripcion); // false
-console.log('Total mensual:', total); // 800
-console.log('Cantidad de cursos:', tira.cursos.length); // 1
-
-const app = document.getElementById('app');
-
-app.innerHTML = `
-  <p>Alumno: ${tira.alumno}</p>
-  <p>Beca: ${tira.beca}%</p>
-  <p>Cursos inscritos: ${tira.cursos.length}</p>
-  <p>Total mensual: $${total}</p>
-`;
+// TODO (PM): Instanciar cursos, probar casos borde de beca (-1, 0, 100, 101),
+// comprobar rechazo de cursos duplicados y mostrar el total mensual en consola/HTML.
