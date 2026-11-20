@@ -1,12 +1,41 @@
 export default class TiraMaterias {
-  // TODO (HU4): Atributos alumno, beca (0 a 100) y arreglo cursos = []
   constructor(alumno, beca = 0) {
     this.alumno = alumno;
     this.beca = beca;
     this.cursos = [];
   }
 
-  // TODO (Criterio obligatorio): Validar mediante setter que el porcentaje de beca esté estrictamente entre 0 y 100
-  // TODO (HU4): inscribirCurso(curso) -> usar ciclo for para detectar duplicados y evitar inscribir el mismo curso dos veces
-  // TODO (HU4): calcularTotalMensual() -> usar ciclo for para sumar el total mensual de la colegiatura
+  get beca() {
+    return this._beca;
+  }
+
+  set beca(porcentajeBeca) {
+    if (porcentajeBeca >= 0 && porcentajeBeca <= 100) {
+      this._beca = porcentajeBeca;
+    } else {
+      console.log("La beca debe estar entre 0 y 100");
+    }
+  }
+
+  inscribirCurso(curso) {
+    for (let i = 0; i < this.cursos.length; i++) {
+      if (this.cursos[i].clave === curso.clave) {
+        console.log(`El curso ${curso.clave} ya está inscrito`);
+        return false;
+      }
+    }
+
+    this.cursos.push(curso);
+    return true;
+  }
+
+  calcularTotalMensual() {
+    let total = 0;
+
+    for (let i = 0; i < this.cursos.length; i++) {
+      total += this.cursos[i].calcularColegiatura(this.beca);
+    }
+
+    return total;
+  }
 }
