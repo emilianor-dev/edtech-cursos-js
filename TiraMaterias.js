@@ -1,6 +1,6 @@
 export default class TiraMaterias {
   #alumno;
-  #beca;
+#beca;
   #cursos;
 
   constructor(alumno, beca = 0) {
