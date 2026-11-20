@@ -89,18 +89,27 @@ if (elCatalogo) {
 }
 
 if (elTira) {
-  let htmlTira = `<p><strong>Alumno:</strong> ${tiraAlumno.alumno} | <strong>Beca:</strong> ${tiraAlumno.beca}%</p><ul>`;
+  let htmlTira = '';
   for (let i = 0; i < tiraAlumno.cursos.length; i++) {
     const c = tiraAlumno.cursos[i];
-    htmlTira += `<li>${c.clave} - ${c.titulo}: $${c.calcularColegiatura(tiraAlumno.beca)}</li>`;
+    htmlTira += `
+      <tr>
+        <td>${c.clave}</td>
+        <td>${c.titulo}</td>
+        <td>$${c.calcularColegiatura(tiraAlumno.beca)}</td>
+      </tr>
+    `;
   }
-  htmlTira += '</ul>';
   elTira.innerHTML = htmlTira;
 }
 
 if (elTotal) {
-  elTotal.textContent = `$${totalMensual}`;
+  elTotal.innerHTML = `
+    <p><strong>Alumno:</strong> ${tiraAlumno.alumno} | <strong>Beca:</strong> ${tiraAlumno.beca}%</p>
+    <p><strong>Total a pagar:</strong> $${totalMensual}</p>
+  `;
 }
+
 
 if (elPruebas) {
   let htmlPruebas = '<ul>';
