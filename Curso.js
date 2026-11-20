@@ -1,14 +1,49 @@
 export default class Curso {
-  // TODO (HU1): Registrar cada curso con su clave, título y precio base mensual
-  // TODO: Agregar getters y setters (validar que precioBase no sea negativo)
+  #clave
+  #titulo
+  #precioBase
+
   constructor(clave, titulo, precioBase) {
-    this.clave = clave;
-    this.titulo = titulo;
-    this.precioBase = precioBase;
+    this.#clave = clave
+    this.#titulo = titulo
+    this.#precioBase = 0
+    this.precioBase = precioBase
   }
 
-  // TODO (HU3): Calcular el monto final aplicando el porcentaje de beca (0% a 100%)
+  get clave(){
+    return this.#clave
+  }
+
+  get titulo(){
+    return this.#titulo
+  }
+
+  get precioBase(){
+    return  this.#precioBase
+  }
+
+  set clave(clave){
+    this.#clave = clave
+  }
+
+  set titulo(titulo){
+    this.#titulo = titulo
+  }
+
+  set precioBase(precioBase){
+    if(precioBase >= 0){
+      this.#precioBase = precioBase
+    }else{
+      console.log("El precio base no debe de ser negativo")
+    }
+  }
+
   calcularColegiatura(porcentajeBeca = 0) {
-    return this.precioBase;
+    if(porcentajeBeca >= 0 && porcentajeBeca <= 100){
+      return this.#precioBase - (this.#precioBase * porcentajeBeca / 100)
+    }else{
+      console.log("El porcentaje de beca debe ser entre 0 y 100")
+      return this.#precioBase
+    }
   }
 }
