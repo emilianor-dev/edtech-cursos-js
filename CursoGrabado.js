@@ -8,6 +8,10 @@ export default class CursoGrabado extends Curso {
 
   // TODO (HU2/HU3): Acceso asíncrono sin costo extra; aplicar porcentajeBeca sobre precioBase
   calcularColegiatura(porcentajeBeca) {
-    return 0;
+    if (porcentajeBeca < 0 || porcentajeBeca > 100) {
+      throw new Error('El porcentaje de beca debe estar entre 0 y 100.');
+    }
+      
+      return this.precioBase - (this.precioBase * porcentajeBeca / 100);
   }
 }
