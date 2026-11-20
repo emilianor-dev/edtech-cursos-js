@@ -1,6 +1,7 @@
-import CursoGrabado from './CursoGrabado.js';
-import BootcampVivo from './BootcampVivo.js';
-import TiraMaterias from './TiraMaterias.js';
+import Curso from './models/Curso.js';
+import CursoGrabado from './models/CursoGrabado.js';
+import BootcampVivo from './models/BootcampVivo.js';
+import TiraMaterias from './models/TiraMaterias.js';
 
 const resultadosPruebas = [];
 

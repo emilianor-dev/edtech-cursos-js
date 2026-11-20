@@ -13,12 +13,13 @@ Plataforma de Suscripciones y Cursos en Línea (EdTech) para administrar el cat�
 
 | Archivo | Descripción | Responsable | Rama |
 | :--- | :--- | :--- | :--- |
-| `Curso.js` | Clase padre con atributos privados, validaciones y cálculo base | Johana | `feat/curso-base` |
-| `CursoGrabado.js` | Clase hija para cursos pregrabados (descuento directo sobre precio base) | Alfredo | `feat/curso-grabado` |
-| `BootcampVivo.js` | Clase hija para bootcamps en vivo (incluye cargo de mentoría) | Gabriela | `feat/bootcamp-vivo` |
-| `TiraMaterias.js` | Clase gestora de inscripciones, control de duplicados y total mensual | Pablo | `feat/tira-materias` |
+| `js/models/Curso.js` | Clase padre con atributos privados, validaciones y cálculo base | Johana | `feat/curso-base` |
+| `js/models/CursoGrabado.js` | Clase hija para cursos pregrabados (descuento directo sobre precio base) | Alfredo | `feat/curso-grabado` |
+| `js/models/BootcampVivo.js` | Clase hija para bootcamps en vivo (incluye cargo de mentoría) | Gabriela | `feat/bootcamp-vivo` |
+| `js/models/TiraMaterias.js` | Clase gestora de inscripciones, control de duplicados y total mensual | Pablo | `feat/tira-materias` |
 | `index.html` | Estructura base de la interfaz y contenedores del DOM | Fernando | `feat/estructura-html` |
-| `index.js` | Integración de módulos, pruebas de casos borde y renderizado | Emiliano Andrés (PM / QA) | `feat/integracion-pruebas` |
+| `js/index.js` | Integración de módulos, pruebas de casos borde y renderizado | Emiliano Andrés (PM / QA) | `feat/integracion-pruebas` |
+
 
 ## Cómo ejecutar el proyecto
 
